@@ -1,0 +1,105 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def home():\n   return render_template('index.html')\n@app.route(\"/bucket\", methods=[\"POST\"])\ndef bucket_post():\n    bucket_receive = request.form['bucket_give']\n    count =db.bucket.count_documents({})\n    num = count + 1\n    doc = {\n        'num': num,\n        'bucket': bucket_receive,",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "bucket_post",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def bucket_post():\n    bucket_receive = request.form['bucket_give']\n    count =db.bucket.count_documents({})\n    num = count + 1\n    doc = {\n        'num': num,\n        'bucket': bucket_receive,\n        'done': 0\n    }\n    db.bucket.insert_one(doc)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "bucket_done",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def bucket_done():\n    sample_receive = request.form['sample_give']\n    print(sample_receive)\n    return jsonify({'msg': 'POST /bucket/done request!'})\n@app.route(\"/bucket\", methods=[\"GET\"])\ndef bucket_get():\n    return jsonify({'msg': 'GET request!'})\nif __name__ == '__main__':\n   app.run('0.0.0.0', port=5000, debug=True)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "bucket_get",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def bucket_get():\n    return jsonify({'msg': 'GET request!'})\nif __name__ == '__main__':\n   app.run('0.0.0.0', port=5000, debug=True)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "client = MongoClient('mongodb+srv://gilangsholeh18:Gilang2007MongoDB@cluster0.bajeyhd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')\ndb = client.dbsparta\napp = Flask(__name__)\n@app.route('/')\ndef home():\n   return render_template('index.html')\n@app.route(\"/bucket\", methods=[\"POST\"])\ndef bucket_post():\n    bucket_receive = request.form['bucket_give']\n    count =db.bucket.count_documents({})",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "db = client.dbsparta\napp = Flask(__name__)\n@app.route('/')\ndef home():\n   return render_template('index.html')\n@app.route(\"/bucket\", methods=[\"POST\"])\ndef bucket_post():\n    bucket_receive = request.form['bucket_give']\n    count =db.bucket.count_documents({})\n    num = count + 1",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef home():\n   return render_template('index.html')\n@app.route(\"/bucket\", methods=[\"POST\"])\ndef bucket_post():\n    bucket_receive = request.form['bucket_give']\n    count =db.bucket.count_documents({})\n    num = count + 1\n    doc = {",
+        "detail": "app",
+        "documentation": {}
+    }
+]
